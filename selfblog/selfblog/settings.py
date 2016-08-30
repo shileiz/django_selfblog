@@ -13,7 +13,7 @@ ROOT_PATH = path.abspath(path.join(path.dirname('settings.py'), path.pardir))
 ADMINS = (
     ('the5fire', 'thefivefire@gmail.com'),
 )
-ALLOWED_HOSTS = ['localhost', '45.62.98.85']
+ALLOWED_HOSTS = ['www.zsllsz.com',]
 
 MANAGERS = ADMINS
 
@@ -23,8 +23,8 @@ if DEBUG:
     DB_USER = 'root'
     DB_PWD = 'root'
 else:
-    DOMAIN = 'http://www.the5fire.com'
-    DB_NAME = 'mydb'
+    DOMAIN = 'http://www.zsllsz.com'
+    DB_NAME = '/var/www/wsgi-app/selfblog/mydb'
     DB_USER = 'the5fire'
     DB_PWD = 'the5fire'
 
@@ -73,7 +73,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-#STATIC_ROOT = ''
+STATIC_ROOT = '/var/www/selfblog-static'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
