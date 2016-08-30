@@ -13,7 +13,7 @@ ROOT_PATH = path.abspath(path.join(path.dirname('settings.py'), path.pardir))
 ADMINS = (
     ('the5fire', 'thefivefire@gmail.com'),
 )
-ALLOWED_HOSTS = ['localhost', '.the5fire.com']
+ALLOWED_HOSTS = ['localhost', '45.62.98.85']
 
 MANAGERS = ADMINS
 
@@ -153,9 +153,9 @@ INSTALLED_APPS = (
 if DEBUG:
     INSTALLED_APPS = INSTALLED_APPS + ('debug_toolbar', )
     MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES + ('debug_toolbar.middleware.DebugToolbarMiddleware', )
-    LOG_FILE = '/tmp/blog.log'
+    LOG_FILE = path.join(ROOT_PATH,'blog.log')
 else:
-    LOG_FILE = '/home/the5fire/virtualenvs/bloga/logs/all.log'
+    LOG_FILE = '/var/log/selfblog/selfblog.log'
 
 LOGGING = {
     'version': 1,
