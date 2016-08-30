@@ -55,7 +55,7 @@ class Post(models.Model):
     is_top = models.BooleanField(default=False, verbose_name=u'置顶')
 
     summary = models.TextField(verbose_name=u'摘要')
-    content = models.TextField(verbose_name=u'文章正文rst格式')
+    content = models.TextField(verbose_name=u'文章正文markdown格式')
 
     content_html = models.TextField(verbose_name=u'文章正文html')
     view_times = models.IntegerField(default=1)

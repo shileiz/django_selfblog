@@ -1,4 +1,5 @@
 #coding:utf-8
+import markdown
 import xadmin
 from django.core import urlresolvers
 
@@ -6,7 +7,6 @@ from .models import Post
 from .models import Category
 from .models import Page
 from .models import Widget
-from utils.markup import restructuredtext
 
 
 class PostAdmin(object):
@@ -36,7 +36,7 @@ class PostAdmin(object):
         if not obj.summary:
             obj.summary = obj.content
         if not obj.is_old:
-            obj.content_html = restructuredtext(obj.content)
+            obj.content_html = markdown.markdown(obj.content, extensions=['codehilite'])
         else:
             obj.content_html = obj.content.replace('\r\n', '<br/>')
             import re
