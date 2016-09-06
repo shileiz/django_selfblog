@@ -36,7 +36,7 @@ class PostAdmin(object):
         if not obj.summary:
             obj.summary = obj.content
         if not obj.is_old:
-            obj.content_html = markdown.markdown(obj.content, extensions=['codehilite'])
+            obj.content_html = markdown.markdown(obj.content, extensions=['codehilite',], extension_configs = {'codehilite':{'noclasses':'True'}})
         else:
             obj.content_html = obj.content.replace('\r\n', '<br/>')
             import re
